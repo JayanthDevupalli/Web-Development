@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buttons</title>
 </head>
+
 <body>
     <button>Click</button><br><br>
     <button>Jayanth</button> <button>Biryani</button>
@@ -12,9 +14,22 @@
     <p>Today I have contacted to krishna sir regarding UiPath certification</p>
     <button style="background-color: yellow;">Add to cart</button>
     <button style="background-color: orange;">Buy Now</button>
+
+    <!-- Challenge Exercise -->
+    <p>Adults Plains Cotton T-Shirt</p>
+    <p>Price: $7.99</p>
+    <button onclick=added() style="background-color: yellow;">Add to cart</button>
+    <button onclick=buy() style="background-color: orange;">Buy Now</button>
     <script>
         console.log("Welcome");
-        
+        function added(){
+            alert("Added");
+        }
+        function buy(){
+            console.log('Loading...');
+            alert('Purchased');
+        }
     </script>
 </body>
+
 </html>

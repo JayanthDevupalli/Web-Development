@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="result" disabled>
+    <p>
+        <button value="1" onclick=btn(value)>1</button>
+        <button value="2" onclick=btn(value)>2</button>
+        <button value="3" onclick=btn(value)>3</button>
+    </p>
+    <p>
+        <button value="+" onclick=btn(value)>+</button>
+        <button value="-" onclick=btn(value)>-</button>
+        <button value="*" onclick=btn(value)>*</button>
+    </p>
+    <p>
+        <button onclick=submit()>Result</button>
+        <button onclick=Reset()>Reset</button>
+    </p>
+
+    <script>
+
+        let cal = '';
+
+        function btn(value){
+            cal += value;
+            document.getElementById("result").value = cal;
+        }
+
+        function submit(){
+            let result = eval(cal);
+            document.getElementById("result").value = result;
+        }
+
+        function Reset(){
+            cal = '';
+            document.getElementById("result").value = cal;
+        }
+
+        let name = 'Jayanth';
+        console.log(`My name is: ${name}`);
+        var coffee = 5;
+        var bagels = 3;
+        var soup = 9;
+        var cost = coffee + bagels + soup;
+        console.log(`Cost of food: $${cost}`);
+        var tax = Math.round(cost * 0.1);
+        console.log(`Tax: $${tax}`);
+        var totalCost = cost + tax;
+        console.log(`Total cost: $${totalCost}`);
+
+    </script>
+</body>
+
+</html>
