@@ -18,17 +18,13 @@
     <!-- Challenge Exercise -->
     <p>Adults Plains Cotton T-Shirt</p>
     <p>Price: $7.99</p>
-    <button onclick=added() style="background-color: yellow;">Add to cart</button>
-    <button onclick=buy() style="background-color: orange;">Buy Now</button>
+    <button onclick="alert('Added');" style="background-color: yellow;">Add to cart</button>
+    <button onclick="
+        console.log('Loading...');
+        alert('Purchased');
+        " style="background-color: orange;">Buy Now</button>
     <script>
         console.log("Welcome");
-        function added(){
-            alert("Added");
-        }
-        function buy(){
-            console.log('Loading...');
-            alert('Purchased');
-        }
     </script>
 </body>
 
