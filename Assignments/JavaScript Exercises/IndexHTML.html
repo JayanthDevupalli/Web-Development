@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS</title>
+</head>
+
+<body>
+    <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+    </ul>
+    <script>
+        let res = document.querySelectorAll('li');
+        res.forEach((element, index) => {
+            if ((index + 1) % 2 == 0) {
+                element.style.color = 'red';
+                console.log('highlighted: ' + element.innerHTML);
+            } else {
+                console.log(element.innerHTML);
+            }
+        });
+    </script>
+</body>
+
+</html>
