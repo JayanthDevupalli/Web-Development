@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter</title>
+    <style>
+        #counterDisplay {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Counter</h1>
+        <div id="counterDisplay">0</div>
+        <button id="incrementButton">Increment</button>
+        <button id="decrementButton">Decrement</button>
+    </div>
+
+    <script>
+        let cnt = 0;
+        const counterDisplay = document.getElementById("counterDisplay");
+        const incrementButton = document.getElementById("incrementButton");
+        const decrementButton = document.getElementById("decrementButton");
+        function updateDisplay() {
+            counterDisplay.textContent = cnt;
+            decrementButton.disabled = cnt <= 0; 
+        }
+        incrementButton.addEventListener("click", function () {
+            cnt++;
+            updateDisplay();
+        });
+        decrementButton.addEventListener("click", function () {
+            if (cnt > 0) {
+                cnt--;
+            }
+            updateDisplay();
+        });
+        updateDisplay();
+    </script>
+
+</body>
+
+</html>
