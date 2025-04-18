@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="myList">
+            <li class="item">Item 1</li>
+            <li class="item">Item 2</li>
+            <li class="item">Item 3</li>
+        </ul>
+        <button id="addButton">Add Item</button>
+    </div>
+    <script>
+        const addButton = document.getElementById("addButton");
+        const myList = document.getElementById("myList");
+        addButton.addEventListener("click", function () {
+            const newItem = document.createElement("li");
+            newItem.classList.add("item");
+            newItem.textContent = "New Item";
+            myList.appendChild(newItem);
+        });
+
+        myList.addEventListener("click", function (event) {
+            if (event.target && event.target.matches("li.item")) {
+                event.target.remove();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
