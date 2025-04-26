@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result, #score {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rock Paper Scissors</h1>
+  <button onclick="play('rock')">Rock</button>
+  <button onclick="play('paper')">Paper</button>
+  <button onclick="play('scissors')">Scissors</button>
+
+  <div id="result"></div>
+  <div id="score">You: 0 | CPU: 0</div>
+
+  <script>
+    let userScore = 0;
+    let cpuScore = 0;
+
+    function play(user) {
+      const choices = ["rock", "paper", "scissors"];
+      const cpu = choices[Math.floor(Math.random() * 3)];
+      let result = "";
+
+      if (user === cpu) {
+        result = "It's a draw!";
+      } else if (
+        (user === "rock" && cpu === "scissors") ||
+        (user === "paper" && cpu === "rock") ||
+        (user === "scissors" && cpu === "paper")
+      ) {
+        result = "You win!";
+        userScore++;
+      } else {
+        result = "You lose!";
+        cpuScore++;
+      }
+
+      document.getElementById("result").textContent = `CPU chose ${cpu}. ${result}`;
+      document.getElementById("score").textContent = `You: ${userScore} | CPU: ${cpuScore}`;
+    }
+  </script>
+</body>
+</html>
