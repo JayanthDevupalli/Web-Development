@@ -29,11 +29,12 @@
   <button onclick="play('scissors')">Scissors</button>
 
   <div id="result"></div>
-  <div id="score">You: 0 | CPU: 0</div>
+  <div id="score">You: 0 | CPU: 0 | Ties: 0</div>
 
   <script>
     let userScore = 0;
     let cpuScore = 0;
+    let tieScore = 0;
 
     function play(user) {
       const choices = ["rock", "paper", "scissors"];
@@ -42,6 +43,7 @@
 
       if (user === cpu) {
         result = "It's a draw!";
+        tieScore++;
       } else if (
         (user === "rock" && cpu === "scissors") ||
         (user === "paper" && cpu === "rock") ||
@@ -55,7 +57,7 @@
       }
 
       document.getElementById("result").textContent = `CPU chose ${cpu}. ${result}`;
-      document.getElementById("score").textContent = `You: ${userScore} | CPU: ${cpuScore}`;
+      document.getElementById("score").textContent = `You: ${userScore} | CPU: ${cpuScore} | Ties: ${tieScore}`;
     }
   </script>
 </body>
